@@ -5,6 +5,7 @@ kind: Deployment
 metadata:
   name: mongodb
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: mongodb
@@ -13,7 +14,6 @@ spec:
       labels:
         app: mongodb
     spec:
-      replicas: 2
       containers:
       - name: mongodb
         image: mongo:5.0.5
